@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 
-namespace Desktop.Views;
+namespace Taskhub.Desktop.Views;
+
 public partial class MainWindow : Window
 {
     public MainWindow()

@@ -1,6 +1,8 @@
-﻿namespace Desktop.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public partial class MainWindowViewModel : ViewModelBase
+namespace Taskhub.Desktop.ViewModels;
+
+public partial class MainWindowViewModel : ObservableObject
 {
     public string Greeting { get; } = "Welcome to Avalonia!";
 }

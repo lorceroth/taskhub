@@ -3,11 +3,11 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using Desktop.ViewModels;
-using Desktop.Views;
+using Taskhub.Desktop.ViewModels;
+using Taskhub.Desktop.Views;
 using System.Linq;
 
-namespace Desktop;
+namespace Taskhub.Desktop;
 public partial class App : Application
 {
     public override void Initialize()

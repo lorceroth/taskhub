@@ -1,12 +1,12 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Desktop.ViewModels;
+using Taskhub.Desktop.ViewModels;
 using System;
 
-namespace Desktop;
+namespace Taskhub.Desktop;
+
 public class ViewLocator : IDataTemplate
 {
-
     public Control? Build(object? param)
     {
         if (param is null)

@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace Desktop;
+namespace Taskhub.Desktop;
 
 internal sealed class Program
 {
