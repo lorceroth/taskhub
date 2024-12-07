@@ -1,11 +1,12 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using Taskhub.Desktop.Extensions;
 using Taskhub.Desktop.ViewModels;
 using Taskhub.Desktop.Views;
-using System.Linq;
 
 namespace Taskhub.Desktop;
 public partial class App : Application
@@ -17,6 +18,13 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        BindingPlugins.DataValidators.RemoveAt(0);
+
+        var collection = new ServiceCollection();
+        collection.RegisterServices();
+
+        var services = collection.BuildServiceProvider();
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
@@ -24,7 +32,7 @@ public partial class App : Application
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainWindowViewModel(),
+                DataContext = services.GetRequiredService<MainWindowViewModel>(),
             };
         }
 
