@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Taskhub.Core.Entities;
+using Taskhub.Core.Projects;
 using Taskhub.Infrastructure.Persistence.Extensions;
 
 namespace Taskhub.Infrastructure.Persistence.Configuration;

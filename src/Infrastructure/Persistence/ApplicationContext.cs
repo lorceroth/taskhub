@@ -4,7 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Taskhub.Core.Entities;
+using Taskhub.Core.Categories;
+using Taskhub.Core.Common.Abstractions;
+using Taskhub.Core.Projects;
+using Taskhub.Core.WorkTasks;
 using Taskhub.Infrastructure.Persistence.Configuration;
 
 namespace Taskhub.Infrastructure.Persistence;

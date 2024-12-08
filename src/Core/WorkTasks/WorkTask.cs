@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Taskhub.Core.Categories;
+using Taskhub.Core.Common.Abstractions;
+using Taskhub.Core.Projects;
 
-namespace Taskhub.Core.Entities;
+namespace Taskhub.Core.WorkTasks;
 
 /// <summary>
 /// Represents a work task that can be added to a specified day.

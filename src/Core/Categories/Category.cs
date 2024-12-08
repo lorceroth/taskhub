@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Taskhub.Core.Entities;
+namespace Taskhub.Core.Categories;
 
 /// <summary>
 /// Represents a category that can be used to categorize various work tasks.

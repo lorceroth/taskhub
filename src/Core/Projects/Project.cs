@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Taskhub.Core.Common.Abstractions;
 
-namespace Taskhub.Core.Entities;
+namespace Taskhub.Core.Projects;
 
 /// <summary>
 /// Represents a project that can be used to group related work tasks together.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Taskhub.Core.Entities;
+namespace Taskhub.Core.Common.Abstractions;
 
 /// <summary>
 /// Represents an entity that records its creation and update dates.

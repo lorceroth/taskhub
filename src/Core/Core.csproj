@@ -8,4 +8,8 @@
     <RootNamespace>Taskhub.Core</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Specification" Version="8.0.0" />
+  </ItemGroup>
+
 </Project>
