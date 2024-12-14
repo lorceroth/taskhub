@@ -26,7 +26,6 @@ public partial class MainWindowViewModel : ViewModelBase
         }
 
         CurrentPage = _views[0];
-        CurrentPage.Reloaded();
     }
 
     private void OnPageRequested(object? sender, Type e)
@@ -36,7 +35,6 @@ public partial class MainWindowViewModel : ViewModelBase
         if (page is not null)
         {
             CurrentPage = page;
-            CurrentPage.Reloaded();
         }
     }
 }

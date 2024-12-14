@@ -1,7 +1,5 @@
-﻿using ReactiveUI;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reactive.Concurrency;
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Taskhub.Core.WorkTasks;
 using Taskhub.Core.WorkTasks.Abstractions;
@@ -17,27 +15,21 @@ public partial class StartViewModel : PageViewModelBase
     public StartViewModel(IWorkTaskService workTaskService) : this()
     {
         _workTaskService = workTaskService;
+
+        NewTask = new RelayCommand(NewTaskCommand);
     }
 
-    public ObservableCollection<WorkTask> WorkTasks { get; set; } = new();
+    public RelayCommand NewTask { get; }
 
-    public override void Reloaded()
+    public Task<ICollection<WorkTask>> WorkTasks => GetWorkTasks();
+
+    private async Task<ICollection<WorkTask>> GetWorkTasks() =>
+        await _workTaskService.GetWorkTasksForToday();
+
+    public void NaviateToNewTask() => RequestPage<NewWorkTaskViewModel>();
+
+    private void NewTaskCommand()
     {
-        RxApp.MainThreadScheduler.Schedule(async () => await LoadWorkTasks());
-    }
-
-    private async Task LoadWorkTasks()
-    {
-        var workTasks = await _workTaskService.GetWorkTasksForToday();
-
-        if (workTasks.Any())
-        {
-            WorkTasks.Clear();
-
-            foreach (var workTask in workTasks)
-            {
-                WorkTasks.Add(workTask);
-            }
-        }
+        RequestPage<NewWorkTaskViewModel>();
     }
 }

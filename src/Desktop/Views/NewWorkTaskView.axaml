@@ -24,11 +24,11 @@
     <DatePicker Name="DayControl" SelectedDate="{Binding Day}" />
 
     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-      <Button Command="{Binding SaveCommand}">
+      <Button Command="{Binding Save}">
         Save
       </Button>
     
-      <Button Command="{Binding CancelCommand}">
+      <Button Command="{Binding Cancel}">
         Cancel
       </Button>
     </StackPanel>
