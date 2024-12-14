@@ -26,4 +26,7 @@ public class WorkTaskService : IWorkTaskService
 
     public async Task<WorkTask?> GetWorkTask(Guid id) => await _workTaskRepository
         .GetByIdAsync(id);
+
+    public async Task<WorkTask?> Create(WorkTask workTask) => await _workTaskRepository
+        .AddAsync(workTask);
 }

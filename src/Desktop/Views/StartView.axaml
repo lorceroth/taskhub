@@ -1,0 +1,44 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="using:Taskhub.Desktop.ViewModels"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:i="System.Windows.Interactivity"
+  x:Class="Taskhub.Desktop.Views.StartView"
+  x:DataType="vm:StartViewModel">
+
+  <Design.DataContext>
+    <vm:StartViewModel />
+  </Design.DataContext>
+  
+  <StackPanel Orientation="Vertical" Margin="40">
+    <TextBlock Text="Today's tasks" FontSize="36" FontWeight="Bold" Margin="0 0 0 20" />
+
+    <ItemsControl ItemsSource="{Binding WorkTasks}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+            <CheckBox />
+
+            <StackPanel Orientation="Vertical">
+              <TextBlock Text="{Binding Title}" FontSize="20" FontWeight="Medium" />
+              <TextBlock Text="{Binding Description}" />
+            </StackPanel>
+
+            <Button>Delete</Button>
+          </StackPanel>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <TextBlock IsVisible="{Binding !WorkTasks.Count}" Margin="0 0 0 20">
+      No tasks yet!
+    </TextBlock>
+
+    <Button Click="OnNewWorkTaskButtonClicked">
+      New Task
+    </Button>
+  </StackPanel>
+  
+</UserControl>

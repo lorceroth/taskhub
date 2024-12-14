@@ -1,0 +1,37 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="using:Taskhub.Desktop.ViewModels"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  x:Class="Taskhub.Desktop.Views.NewWorkTaskView"
+  x:DataType="vm:NewWorkTaskViewModel">
+
+  <Design.DataContext>
+    <vm:NewWorkTaskViewModel />
+  </Design.DataContext>
+
+  <StackPanel Orientation="Vertical" Margin="40">
+    <TextBlock Text="New task" FontSize="36" FontWeight="Bold" Margin="0 0 0 20" />
+
+    <TextBlock Text="Title" />
+    <TextBox Name="TitleControl" Text="{Binding Title}" />
+
+    <TextBlock Text="Description" />
+    <TextBox Name="DescriptionControl" Text="{Binding Description}" />
+    
+    <TextBlock Text="Day" />
+    <DatePicker Name="DayControl" SelectedDate="{Binding Day}" />
+
+    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+      <Button Command="{Binding SaveCommand}">
+        Save
+      </Button>
+    
+      <Button Command="{Binding CancelCommand}">
+        Cancel
+      </Button>
+    </StackPanel>
+  </StackPanel>
+  
+</UserControl>

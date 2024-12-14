@@ -60,7 +60,7 @@ public class ApplicationContext : DbContext
     {
         foreach (var (state, entity) in ChangeTracker.Entries()
             .Where(x => x.Entity is ITimestampEntity)
-            .Select(x => (x.State, x as ITimestampEntity)))
+            .Select(x => (x.State, x.Entity as ITimestampEntity)))
         {
             switch (state)
             {

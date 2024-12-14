@@ -9,6 +9,6 @@ namespace Taskhub.Core.WorkTasks.Specifications;
 public class WorkTaskByDaySpecification : Specification<WorkTask>
 {
     public WorkTaskByDaySpecification(DateTime day) => Query
-        .Where(x => x.Day == day)
+        .Where(x => x.Day.Date == day.Date)
         .OrderBy(x => x.Day);
 }

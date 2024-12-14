@@ -15,4 +15,6 @@ public interface IWorkTaskService
     Task<ICollection<WorkTask>> GetWorkTasksForDate(DateTime date);
 
     Task<WorkTask?> GetWorkTask(Guid id);
+
+    Task<WorkTask?> Create(WorkTask workTask);
 }
